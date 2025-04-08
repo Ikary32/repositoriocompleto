@@ -1,0 +1,104 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #3e1047;
+}
+
+h1 {
+    text-align: center;
+    color: #c91919;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de películas */
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjeta de película individual */
+.movie {
+    background: rgb(124, 15, 197);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px #d65555;
+    transition: transform 0.3s ease;
+}
+
+.movie:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgb(240, 4, 4);
+}
+
+.movie img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.movie h3 {
+    margin: 12px 10px 5px;
+    font-size: 16px;
+    color: #7c0000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie p {
+    margin: 0 10px 12px;
+    font-size: 14px;
+    color: #dadada;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    .movie img {
+        height: 210px;
+    }
+}
+
+@media (max-width: 600px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+    }
+    
+    .movie h3 {
+        font-size: 14px;
+    }
+    
+    .movie p {
+        font-size: 12px;
+    }
+    
+    .movie img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .movie img {
+        height: 150px;
+    }
+}
